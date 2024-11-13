@@ -3,7 +3,13 @@ import { BsBrightnessHigh } from "react-icons/bs";
 import { BsMoonStars } from "react-icons/bs";
 import { BsHouse } from "react-icons/bs";
 
-const Header = () => {
+import Galeria from "./Galeria";
+import Home from "./Home";
+import Horarios from "./Horarios";
+import Actividades from "./Actividades";
+import Informacion from "./Informacion";
+
+const Header = ({ setOption }) => {
     const [modo, setModo] = useState(<BsBrightnessHigh className="sunIcon" />)
     const [estado, setEstado] = useState(true)
 
@@ -17,19 +23,25 @@ const Header = () => {
         }
     }
 
+    const handleClickOptionMenu = (selected) => {
+        setOption(selected)
+    }
+
     useEffect(() => {
         document.body.className = estado ? 'lightTheme' : 'darkTheme';
     }, [estado])
 
     return (
         <header className="header">
-            <navigator className="navigatorBar">
-            <button className="headerButton"><BsHouse className="homeButton" /></button>
-                <button className="headerButton">Horarios</button>
-                <button className="headerButton">Actividades</button>
-                <button className="headerButton">Galeria</button>
-                <button className="headerButton">Información</button>
-            </navigator>
+            <div className="navigatorBar">
+                <button className="headerButton" onClick={() => handleClickOptionMenu(<Home></Home>)}><BsHouse className="homeButton" /></button>
+
+                <button className="headerButton" onClick={() => handleClickOptionMenu(<Horarios></Horarios>)}>Horarios</button>
+                <button className="headerButton" onClick={() => handleClickOptionMenu(<Actividades></Actividades>)}>Actividades</button>
+                <button className="headerButton" onClick={() => handleClickOptionMenu(<Galeria></Galeria>)} >Galeria</button>
+                <button className="headerButton" onClick={() => handleClickOptionMenu(<Informacion></Informacion>)}>Información</button>
+
+            </div>
             <aside><button className="changeThemeButton" onClick={handleClick}>{modo}</button></aside>
         </header>
     )

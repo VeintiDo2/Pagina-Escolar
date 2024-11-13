@@ -17,6 +17,10 @@ button {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* ------------------------------ color transitions ------------------------------ */
 
 /* --- BackgroundColor --- */
@@ -24,19 +28,35 @@ button {
   background-color: rgb(9, 35, 44);
   transition: background-color 0.6s ease, color 0.6s ease;
 }
+
+.darkTheme .introductionDecoration {
+  background-color: #d3e8f0;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
 .lightTheme {
   background-color: azure;
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 
+.lightTheme .introductionDecoration {
+  background-color: #3d4a4f;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
 /* --- Words --- */
 .darkTheme .headerButton,
-.darkTheme .mainContent {
+.darkTheme .mainContent,
+.darkTheme .footer,
+.darkTheme a {
   color: white;
   transition: background-color 0.6s ease, color 0.6s ease;
 }
+
 .lightTheme .headerButton,
-.lightTheme .mainContent {
+.lightTheme .mainContent,
+.lightTheme .footer,
+.lightTheme a {
   color: black;
   transition: background-color 0.6s ease, color 0.6s ease;
 }
@@ -58,13 +78,13 @@ button {
   justify-content: space-between;
   background-color: rgba(255, 255, 255, .1);
   backdrop-filter: blur(15px);
-  height: 15vh;
+  height: 13vh;
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
   z-index: 1000;
   box-sizing: border-box;
 }
 
-.navigatorBar{
+.navigatorBar {
   display: flex;
 }
 
@@ -121,7 +141,7 @@ button {
   padding: 1rem;
   background-color: transparent;
   flex: 1;
-  margin-top: 140px;
+  margin-top: 17.5vh;
 }
 
 .introductionContainer {
@@ -140,6 +160,21 @@ button {
   padding: 1rem;
 }
 
+.introductionImg {
+  position: relative;
+  display: inline-block;
+}
+
+.introductionDecoration {
+  position: absolute;
+  top: 0;
+  left: 15vw;
+  width: 75%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+}
+
 .introductionImg img {
   border-radius: 5px;
   width: 75vh;
@@ -153,12 +188,31 @@ button {
   user-select: none;
 }
 
+/* .introductionLabel {
+  border-left: 5px solid;
+} */
+
 /* ------------------------------ FOOTER ------------------------------ */
 
 .footer {
-  padding: 2.5rem;
+  padding: 3vh 7vw;
   background-color: transparent;
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer section,
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.footerIcons {
+  font-size: 2rem;
 }
 
 /* ------------------------------ RESPONSIVE ------------------------------ */

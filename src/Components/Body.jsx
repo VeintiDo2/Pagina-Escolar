@@ -1,24 +1,9 @@
-import ImagenEscuela from "../Images/EscuelaFoto.png"
 
-const Body = () => {
+const Body = ({ option }) => {
+
     return (
         <main className="mainContent">
-            <section className="introductionContainer">
-                <div className="introductionLabel">
-                    <label>
-                        Escuela Nuevo Amanecer
-                    </label>
-                </div>
-                <div className="introductionImg">
-                    <img src={ImagenEscuela} />
-                </div>
-            </section>
-            <section>
-                <article>
-                    <img className="xd" src={ImagenEscuela} alt="" />
-                </article>
-            </section>
-
+            {option}
         </main>
     )
 }
