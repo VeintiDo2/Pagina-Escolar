@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+}
+
+/* ------------------------------ color transitions ------------------------------ */
+
+/* --- BackgroundColor --- */
+.darkTheme {
+  background-color: rgb(9, 35, 44);
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+.lightTheme {
+  background-color: azure;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* --- Words --- */
+.darkTheme .headerButton,
+.darkTheme .mainContent {
+  color: white;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+.lightTheme .headerButton,
+.lightTheme .mainContent {
+  color: black;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* --- ShadowBoxs --- */
+.darkTheme .header,
+.darkTheme .footer {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* ------------------------------ HEADER ------------------------------ */
+
+.header {
+  position: fixed;
+  padding: 3vh 7vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(15px);
+  height: 15vh;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navigatorBar{
+  display: flex;
+}
+
+/* Prueba */
+.xd {
+  width: 50%;
+}
+
+.navigatorBar button {
+  margin: 0 10px 0 10px;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.headerButton:hover {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 0 2px black;
+}
+
+.homeButton {
+  font-size: 2rem;
+}
+
+.changeThemeButton {
+  margin: 10px;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.changeThemeButton:hover {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 0 2px black;
+  transform: scale(1.1);
+}
+
+.sunIcon {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.moonIcon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* ------------------------------ MAIN ------------------------------ */
+
+.mainContent {
+  padding: 1rem;
+  background-color: transparent;
+  flex: 1;
+  margin-top: 140px;
+}
+
+.introductionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 7vw 0 7vw;
+}
+
+.introductionLabel,
+.introductionImg {
+  flex-grow: 1;
+  flex-basis: 200px;
+  text-align: left;
+  padding: 1rem;
+}
+
+.introductionImg img {
+  border-radius: 5px;
+  width: 75vh;
+  user-select: none;
+}
+
+.introductionLabel label {
+  font-size: 6vw;
+  font-weight: bold;
+  line-height: 14vh;
+  user-select: none;
+}
+
+/* ------------------------------ FOOTER ------------------------------ */
+
+.footer {
+  padding: 2.5rem;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+}
+
+/* ------------------------------ RESPONSIVE ------------------------------ */
+
+@media (max-width: 768px) {
+
+  .introductionContainer {
+    position: relative;
+    padding: 0 1vw 0 1vw;
+  }
+
+  .introductionLabel {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65%;
+    z-index: 1;
+  }
+
+  .introductionLabel label {
+    font-size: 10vw;
+    line-height: 10vw;
+  }
+
+  .introductionImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .introductionImg img {
+    border-radius: 5px;
+    width: 80vw;
+    mask-image: linear-gradient(black 40%, transparent);
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+@media (min-width: 1025px) {}
