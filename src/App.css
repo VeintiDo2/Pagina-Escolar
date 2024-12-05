@@ -40,12 +40,14 @@ a {
 }
 
 .lightTheme .introductionDecoration {
-  background-color: #3d4a4f;
+  background-color: rgb(171, 171, 236);
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 /* --- Words --- */
 .darkTheme .headerButton,
+.darkTheme .homeButton,
+.darkTheme .menuButton,
 .darkTheme .mainContent,
 .darkTheme .footer,
 .darkTheme a {
@@ -69,6 +71,11 @@ a {
 
 /* ------------------------------ HEADER ------------------------------ */
 
+.mainHeader {
+  display: flex;
+  justify-content: center;
+}
+
 .header {
   position: fixed;
   padding: 3vh 7vw;
@@ -88,17 +95,13 @@ a {
   display: flex;
 }
 
-/* Prueba */
-.xd {
-  width: 50%;
-}
-
 .navigatorBar button {
   margin: 0 10px 0 10px;
   padding: 1rem;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .headerButton:hover {
@@ -107,7 +110,19 @@ a {
 }
 
 .homeButton {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin: 10px;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.homeButton:hover {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 0 2px black;
+  transform: scale(1.1);
 }
 
 .changeThemeButton {
@@ -120,6 +135,62 @@ a {
 }
 
 .changeThemeButton:hover {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 0 2px black;
+  transform: scale(1.1);
+}
+
+.menuButton {
+  display: none;
+  font-size: 1.5rem;
+  margin: 10px;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menuButton:hover {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 0 2px black;
+  transform: scale(1.1);
+}
+
+.dropDownMenu {
+  display: none;
+  position: absolute;
+  height: 0;
+  z-index: 999;
+  margin-top: 17.5vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 0 2px black;
+  gap: 25px;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 85%;
+  transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropDownMenu.click {
+  height: 400px;
+}
+
+.dropDownMenu button {
+  font-size: 1.5rem;
+  margin: 10px;
+  padding: 15px;
+  width: 85%;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dropDownMenu button:hover {
   background-color: rgba(255, 255, 255, .1);
   box-shadow: 0 0 2px black;
   transform: scale(1.1);
@@ -188,9 +259,99 @@ a {
   user-select: none;
 }
 
-/* .introductionLabel {
-  border-left: 5px solid;
-} */
+/* ------------------------------ Actividades ------------------------------ */
+
+.activitysCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.activityCard {
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activityCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activityCard div {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+}
+
+.activityCard div span {
+  width: 10vw;
+  text-align: center;
+}
+
+.activityCard h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.activityCard span {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.activityCard img {
+  width: 40px;
+  height: auto;
+}
+
+.activityCard.red {
+  background-color: rgb(255, 99, 71);
+}
+
+.activityCard.blue {
+  background-color: rgb(135, 206, 250);
+}
+
+.activityCard.green {
+  background-color: rgb(60, 179, 113);
+}
+
+.activityCard.orange {
+  background-color: orange;
+}
+
+/* ------------------------------ Galeria ------------------------------ */
+
+.galeryRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.galeryColumn {
+  flex: 25%;
+  padding: 5px;
+}
+
+.galeryColumn img {
+  width: 100%;
+  margin-top: 5px;
+  transition: transform 0.2s;
+}
+
+.galeryColumn img:hover {
+  transform: translateY(-5px);
+}
+
+
 
 /* ------------------------------ FOOTER ------------------------------ */
 
@@ -218,6 +379,11 @@ a {
 /* ------------------------------ RESPONSIVE ------------------------------ */
 
 @media (max-width: 768px) {
+
+  .navigatorBar,
+  .navigatorBar button {
+    display: none;
+  }
 
   .introductionContainer {
     position: relative;
@@ -251,6 +417,19 @@ a {
     mask-image: linear-gradient(black 40%, transparent);
     display: block;
   }
+
+  .galeryColumn {
+    flex: 33%;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .dropDownMenu {
+    display: flex;
+  }
+
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {}

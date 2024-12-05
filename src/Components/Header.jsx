@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { BsBrightnessHigh } from "react-icons/bs";
 import { BsMoonStars } from "react-icons/bs";
 import { BsHouse } from "react-icons/bs";
+import { IoMenu } from "react-icons/io5";
+import { HiXMark } from "react-icons/hi2";
 
 import Galeria from "./Galeria";
 import Home from "./Home";
@@ -12,6 +14,8 @@ import Informacion from "./Informacion";
 const Header = ({ setOption }) => {
     const [modo, setModo] = useState(<BsBrightnessHigh className="sunIcon" />)
     const [estado, setEstado] = useState(true)
+    const [iconoModo, setIconoModo] = useState(<IoMenu className="menuIcon" />)
+    const [iconoClicked, setIconoClicked] = useState(true)
 
     const handleClick = () => {
         if (estado) {
@@ -31,19 +35,39 @@ const Header = ({ setOption }) => {
         document.body.className = estado ? 'lightTheme' : 'darkTheme';
     }, [estado])
 
-    return (
-        <header className="header">
-            <div className="navigatorBar">
-                <button className="headerButton" onClick={() => handleClickOptionMenu(<Home></Home>)}><BsHouse className="homeButton" /></button>
+    const showMenu = () => {
+        if (iconoClicked) {
+            setIconoModo(<HiXMark className="menuIcon" />)
+            setIconoClicked(false)
+        } else {
+            setIconoModo(<IoMenu className="menuIcon" />)
+            setIconoClicked(true)
+        }
+        const dropDownMenu = document.querySelector(".dropDownMenu")
+        return dropDownMenu.classList.toggle("click")
+    }
 
+    return (
+        <main className="mainHeader">
+            <header className="header">
+                <aside><button className="homeButton" onClick={() => handleClickOptionMenu(<Home></Home>)}><BsHouse /></button></aside>
+                <div className="navigatorBar">
+                    <button className="headerButton" onClick={() => handleClickOptionMenu(<Horarios></Horarios>)}>Horarios</button>
+                    <button className="headerButton" onClick={() => handleClickOptionMenu(<Actividades></Actividades>)}>Actividades</button>
+                    <button className="headerButton" onClick={() => handleClickOptionMenu(<Galeria></Galeria>)} >Galeria</button>
+                    <button className="headerButton" onClick={() => handleClickOptionMenu(<Informacion></Informacion>)}>Información</button>
+                </div>
+                <button onClick={() => showMenu()} className="menuButton" >{iconoModo}</button>
+                <aside><button className="changeThemeButton" onClick={handleClick}>{modo}</button></aside>
+            </header>
+
+            <div className="dropDownMenu">
                 <button className="headerButton" onClick={() => handleClickOptionMenu(<Horarios></Horarios>)}>Horarios</button>
                 <button className="headerButton" onClick={() => handleClickOptionMenu(<Actividades></Actividades>)}>Actividades</button>
                 <button className="headerButton" onClick={() => handleClickOptionMenu(<Galeria></Galeria>)} >Galeria</button>
                 <button className="headerButton" onClick={() => handleClickOptionMenu(<Informacion></Informacion>)}>Información</button>
-
             </div>
-            <aside><button className="changeThemeButton" onClick={handleClick}>{modo}</button></aside>
-        </header>
+        </main>
     )
 }
 
