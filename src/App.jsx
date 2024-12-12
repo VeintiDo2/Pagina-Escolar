@@ -9,7 +9,6 @@ import './App.css'
 function App() {
   const [option, setOption] = useState(<Home></Home>)
 
-
   return (
     <div className='page'>
       <Header setOption={setOption}></Header>

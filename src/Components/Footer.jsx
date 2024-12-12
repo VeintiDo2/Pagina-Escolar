@@ -11,7 +11,7 @@ const Footer = () => {
                 </a>
             </section>
             <section>
-                <CgMail className="footerIcons" /> esc.nuevoamanecer@mep.go.cr
+                <a href="mailto:esc.nuevoamanecer@mep.go.cr" ><CgMail className="footerIcons" /></a>
                 <TbPhone className="footerIcons" /> 2760-1061
             </section>
         </footer>
