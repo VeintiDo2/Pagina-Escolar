@@ -100,10 +100,10 @@ const Header = ({ setOption }) => {
                 <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Actividades />) }}>Actividades</button>
                 <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Galeria />) }} >Galeria</button>
                 <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Nosotros />) }} >Nosotros</button>
-
+                <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<RecursosYServicios />) }} >Recursos Y Servicios</button>
+                <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Valores />) }} >Valores</button>
             </div>
         </main>
     )
 }
-
 export default Header;
