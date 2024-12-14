@@ -12,7 +12,7 @@ import Departamentos from "../Images/united.png"
 
 const RecursosYServicios = () => {
     const [recYServData, setRecYServData] = useState([
-        { id: 1, icon: Languajes, title: "Lengua extranjera" },
+        { id: 1, icon: Languajes, title: "Lengua extranjera (Ingles)" },
         { id: 2, icon: Informatica, title: "Aula de informática" },
         { id: 3, icon: Apoyo, title: "Servicios de apoyo" },
         { id: 4, icon: Preescolar, title: "Aulas de materno y kínder" },

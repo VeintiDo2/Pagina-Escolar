@@ -601,7 +601,6 @@ tbody tr:hover {
   border-radius: 10px;
   overflow: hidden;
   background-image: url(/GaleryImages/photo_9.jpg);
-
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -637,14 +636,15 @@ tbody tr:hover {
 }
 
 .nosotros-VisionMision-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   border-radius: 10px;
-  background-color: #f4f9fc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px 0;
 }
 
 .nosotros-VisionMision-container div {
@@ -660,9 +660,75 @@ tbody tr:hover {
 }
 
 .nosotros-VisionMision-container div p {
-  margin: 0 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dcdcdc;
+  /* Línea más clara */
+  line-height: 1.6;
+}
+
+.nosotros-Datos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  gap: 2rem;
+  border-radius: 10px;
+}
+
+.nosotros-Datos-container h1 {
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.nosotros-Datos-container article {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.nosotros-Datos-container article div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 1.5rem;
+  width: 100%;
+  gap: 2em;
+}
+
+.nosotros-Valores-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  gap: 2rem;
+  border-radius: 10px;
+}
+
+.nosotros-Valores-container article {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.nosotros-Valores-container h1 {
+  font-size: 2rem;
+}
+
+.nosotros-Valores-container p {
+  padding-left: 25px;
+  text-align: justify;
 }
 
 /* ------------------------------ FOOTER ------------------------------ */
@@ -781,6 +847,10 @@ a {
 
   .recyserv-aside-image {
     display: none;
+  }
+
+  .nosotros-Datos-container article {
+    flex-direction: column;
   }
 
 }

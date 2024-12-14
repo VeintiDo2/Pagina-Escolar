@@ -1,7 +1,7 @@
 const Valores = () => {
     return (
         <section>
-            Valores intitucionales
+            Matricula
         </section>
     )
 }

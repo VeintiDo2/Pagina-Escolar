@@ -12,7 +12,7 @@ import Actividades from "./Actividades";
 import Nosotros from "./Nosotros";
 import CustomSelect from "./CustomSelect";
 import RecursosYServicios from "./RecursosYServicios";
-import Valores from "./Valores";
+import Matricula from "./Matricula";
 
 const Header = ({ setOption }) => {
     const [modo, setModo] = useState(<BsBrightnessHigh className="sunIcon" />)
@@ -30,7 +30,7 @@ const Header = ({ setOption }) => {
     const options = [
         { label: 'Nosotros', value: '1', components: <Nosotros /> },
         { label: 'Recursos y servicios', value: '2', components: <RecursosYServicios /> },
-        { label: 'Valores institucionales', value: '3', components: <Valores /> },
+        { label: 'Requisitos de matricula', value: '3', components: <Matricula /> },
     ];
 
     //Restablecer
@@ -101,7 +101,7 @@ const Header = ({ setOption }) => {
                 <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Galeria />) }} >Galeria</button>
                 <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Nosotros />) }} >Nosotros</button>
                 <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<RecursosYServicios />) }} >Recursos Y Servicios</button>
-                <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Valores />) }} >Valores</button>
+                <button className="generalButton" onClick={() => { reset(), handleClickOptionMenu(<Matricula />) }} >Requisitos de matricula</button>
             </div>
         </main>
     )
