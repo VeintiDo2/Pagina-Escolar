@@ -8,14 +8,23 @@ const Horarios = () => {
             <h2>Horarios</h2>
             <article className="schedule-container">
                 <div>
-                    <h3>Mañana</h3>
-                    <img src={Morning} />
-                    <p>7 a.m. a 12:10 m.d. </p>
+                    <article>
+                        <img src={Morning} />
+                    </article>
+                    <article>
+                        <h3>Mañana</h3>
+                        <p>7 a.m. a 12:10 m.d. </p>
+                    </article>
                 </div>
                 <div>
-                    <h3>Tarde</h3>
-                    <img src={Afternoon} />
-                    <p>12:30 m.d a 5:40 p.m.</p>
+                    <article>
+                        <img src={Afternoon} />
+                    </article>
+                    <article>
+                        <h3>Tarde</h3>
+                        <p>12:30 m.d a 5:40 p.m.</p>
+                    </article>
+
                 </div>
             </article>
 

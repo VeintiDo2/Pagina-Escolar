@@ -23,9 +23,7 @@ const RecursosYServicios = () => {
 
     return (
         <main className="recyserv-container">
-            <aside>
-                <img className="recyserv-aside-image" src={AsideImage} />
-            </aside>
+            <img className="recyserv-aside-image" src={AsideImage} />
             <section>
                 <article className="recyserv-title-container">
                     <span>Recursos y Servicios </span>

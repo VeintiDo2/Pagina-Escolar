@@ -66,6 +66,15 @@ const Nosotros = () => {
                 </article>
             </section>
 
+            <section className="nosotros-Ubicacion-container">
+                <h1>¿Dónde nos ubicamos?</h1>
+                <p>Limón, Guácimo, Pocora 420 metros sur de la entrada principal.</p>
+                <a className="generalButton"
+                    href="https://www.google.com/maps/place/Escuela+Nuevo+Amanecer/@10.1660149,-83.6092341,19.79z/data=!4m6!3m5!1s0x8fa0cac39510bbd5:0x74b7ad71f5b1736a!8m2!3d10.1659937!4d-83.6090646!16s%2Fg%2F11bztzwqmk?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_Blank">
+                    Dirección exacta
+                </a>
+            </section>
+
             <section className="nosotros-Valores-container">
                 <h1>Valores institucionales</h1>
                 {Object.values(valores).map(valor => (

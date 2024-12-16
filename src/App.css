@@ -18,7 +18,6 @@ button {
   border: none;
 }
 
-
 /*----------------------------------------------------------------------------------------------*/
 .custom-select-container {
   position: relative;
@@ -275,6 +274,30 @@ a {
 
 /* ------------------------------ MAIN ------------------------------ */
 
+@keyframes fadeInY {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn-X {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .mainContent {
   padding: 1rem;
   background-color: transparent;
@@ -288,6 +311,7 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 7vw 0 7vw;
+  overflow: hidden;
 }
 
 .introductionLabel,
@@ -296,6 +320,8 @@ a {
   flex-basis: 200px;
   text-align: left;
   padding: 1rem;
+  transform: translateY(20px);
+  animation: fadeInY ease forwards 0.5s;
 }
 
 .introductionImg {
@@ -332,51 +358,56 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  transform: translateY(20px);
+  animation: fadeInY ease forwards 0.5s;
 }
 
 .activityCard {
   background-color: transparent;
   color: white;
-  font-family: "Sour Gummy", sans-serif;
   padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-grow: 1;
   flex-basis: 300px;
-  flex-direction: column;
+  gap: 50px;
+  cursor: default;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .activityCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
 }
 
 .activityCard div {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 5vw;
+  gap: 1em;
 }
 
 .activityCard div span {
-  width: 10vw;
-  text-align: center;
+  text-align: left;
 }
 
 .activityCard h1 {
+  width: 100%;
+  text-align: left;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .activityCard span {
   font-size: 1rem;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dcdcdc;
 }
 
 .activityCard img {
-  width: 40px;
+  width: 75px;
   height: auto;
 }
 
@@ -396,6 +427,14 @@ a {
   background-color: orange;
 }
 
+.activityCard.pink {
+  background-color: rgb(255, 192, 225);
+}
+
+.activityCard.lightblue {
+  background-color: lightblue;
+}
+
 /* ------------------------------ Galeria ------------------------------ */
 
 .galeryRow {
@@ -406,6 +445,8 @@ a {
 .galeryColumn {
   flex: 25%;
   padding: 5px;
+  transform: translateY(20px);
+  animation: fadeInY ease forwards 0.5s;
 }
 
 .galeryColumn img {
@@ -428,6 +469,8 @@ a {
   background-color: #f4f9fc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  animation: fadeInY ease forwards 0.5s;
 }
 
 .schedule-plan-container h2 {
@@ -445,12 +488,16 @@ a {
 }
 
 .schedule-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   text-align: center;
   background-color: #ffffff;
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 50%;
+  width: 90%;
   max-width: 300px;
   transition: transform 0.2s ease;
 }
@@ -461,6 +508,7 @@ a {
 
 .schedule-container h3 {
   color: #ff6f61;
+  text-align: left;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
@@ -468,7 +516,6 @@ a {
 .schedule-container img {
   max-width: 100%;
   border-radius: 8px;
-  margin-bottom: 10px;
 }
 
 .schedule-container p {
@@ -532,6 +579,8 @@ tbody tr:hover {
 .recyserv-aside-image {
   border-radius: 5px;
   max-height: 50vw;
+  transform: translateX(-20px);
+  animation: fadeIn-X ease forwards 0.5s;
 }
 
 .recyserv-title-container {
@@ -539,6 +588,8 @@ tbody tr:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
+  transform: translateY(20px);
+  animation: fadeInY ease forwards 0.5s;
 }
 
 .recyserv-title-container span {
@@ -560,6 +611,8 @@ tbody tr:hover {
   flex-direction: column;
   padding-top: 75px;
   gap: 0.5rem;
+  transform: translateY(20px);
+  animation: fadeInY ease forwards 0.5s;
 }
 
 .secyserv-card {
@@ -612,6 +665,8 @@ tbody tr:hover {
   z-index: 2;
   padding-left: 40px;
   font-weight: bold;
+  transform: translateX(-20px);
+  animation: fadeIn-X ease forwards 0.5s;
 }
 
 .nosotros-img-introduccion p {
@@ -621,7 +676,9 @@ tbody tr:hover {
   z-index: 2;
   padding-left: 40px;
   font-weight: bold;
-  top: 65%;
+  top: 70%;
+  transform: translateX(-20px);
+  animation: fadeIn-X ease forwards 0.5s;
 }
 
 .gradient-overlay {
@@ -661,7 +718,6 @@ tbody tr:hover {
 
 .nosotros-VisionMision-container div p {
   border-bottom: 1px solid #dcdcdc;
-  /* Línea más clara */
   line-height: 1.6;
 }
 
@@ -702,6 +758,29 @@ tbody tr:hover {
   gap: 2em;
 }
 
+.nosotros-Ubicacion-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  gap: 2rem;
+  border-radius: 10px;
+}
+
+.nosotros-Ubicacion-container h1 {
+  font-size: 2rem;
+}
+
+.nosotros-Ubicacion-container a {
+  width: 50%;
+  color: black;
+}
+
 .nosotros-Valores-container {
   display: flex;
   flex-direction: column;
@@ -731,6 +810,69 @@ tbody tr:hover {
   text-align: justify;
 }
 
+/* ------------------------------ Matricula ------------------------------ */
+
+.matricula-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  transform: translateY(30px);
+  animation: fadeInY ease forwards 0.5s;
+}
+
+.matricula-container h1 {
+  font-size: 5rem;
+}
+
+.matricula-container h3 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.matricula-requisitos-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+}
+
+.matricula-requisito.left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 1rem 1.5rem;
+  border: 0;
+  gap: 15px;
+  user-select: none;
+  overflow: hidden;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  color: #071432;
+  font-weight: bold;
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.matricula-requisito.right {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 1rem 1.5rem;
+  border: 0;
+  gap: 15px;
+  user-select: none;
+  overflow: hidden;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  color: #071432;
+  font-weight: bold;
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15);
+}
+
 /* ------------------------------ FOOTER ------------------------------ */
 
 .footer {
@@ -752,21 +894,31 @@ a {
 
 .footerIcons {
   font-size: 2rem;
+
 }
 
+.footer-Icon-facebook {
+  font-size: 2rem;
+  transition: transform 0.2s ease-out;
+}
+
+.footer-Icon-facebook:hover {
+  transform: rotate(25deg) scale(1.6);
+}
+
+/* ------------------------------ Barra de desplazamiento ------------------------------ */
 
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* Fondo del área de la barra de desplazamiento */
 ::-webkit-scrollbar-track {
   background: #f4f9fc;
   border-radius: 10px;
 }
 
-/* Estilo de la barra de desplazamiento */
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(45deg, #88b7ed, #d42a90);
   border-radius: 10px;
@@ -804,7 +956,7 @@ a {
   }
 
   .introductionLabel label {
-    font-size: 8vw;
+    font-size: 10vw;
     line-height: 1.5;
     font-weight: bold;
   }
@@ -851,6 +1003,14 @@ a {
 
   .nosotros-Datos-container article {
     flex-direction: column;
+  }
+
+  .nosotros-img-introduccion p {
+    top: 80%;
+  }
+
+  .matricula-requisitos-container {
+    width: 100%;
   }
 
 }

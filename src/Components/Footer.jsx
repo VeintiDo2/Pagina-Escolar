@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
             <section>
                 <a href="https://www.facebook.com/EscuelaNuevoAmaneceroficial/?locale=es_LA" target="_blank">
-                    <AiOutlineFacebook className="footerIcons" />
+                    <AiOutlineFacebook className="footer-Icon-facebook" />
                 </a>
             </section>
             <section>
